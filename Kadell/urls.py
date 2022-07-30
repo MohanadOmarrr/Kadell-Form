@@ -16,6 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from Kadell import settings
+from survey import views
+import main
+
 urlpatterns = [
+    path('', main.homepage, name='homepage'),
     path('admin/', admin.site.urls),
+    path('survey/', views.survey, name="survey"),
 ]
