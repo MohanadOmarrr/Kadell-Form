@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <title>Survey</title>
 
@@ -12,67 +13,153 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-    {% load staticfiles %}
-
 </head>
 <body>
+<!--NAVBAR-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'homepage' %}">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'survey' %}">Survey</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown link
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-    <div align="center" style="padding: 50px 50px">
-        <img src="{{ MEDIA_URL }}Banner.png">
-        <h3>How happy are you in your body? does it affects your mental health?</h3>
-        <h6>The effect of poor body image on mental goes beyond occasional negative thoughts. A study at Bradley Hospital found that people with weight preoccupations or body dysmorphic disorder display higher levels of symptoms for depression and anxiety, and are more likely to have suicidal thoughts.</h6>
-        <h6>Because of this, part of maintaining mental health involves also maintaining a healthy body image. By treating your body with respect and practicing self-love for your body, you can improve your mental health.</h6>
-        <br>
-        <h3>This quiz has been designed to help you assess whether you have a harshly critical view of your body; a loving, accepting image; or if you walk the line in between:</h3>
+    <div  align="center" style="padding-top:10px;">
+        <img src="{% static 'Banner.png' %}" width="45%"/>
     </div>
 
-    <hr style="height:1px;border:none;color:#333;background-color:#333;">
+    <div class="container" style="padding: 50px 200px">
+            <h1 style="font-family:Bonky Serif; line-height:1.5;">How happy are you in your body?<br>Does it affects your mental health?</h1>
+            <br>
+            <p style="line-height:1.7;">The effect of poor body image on mental goes beyond occasional negative thoughts. A study at Bradley Hospital found that people with weight preoccupations or body dysmorphic disorder display higher levels of symptoms for depression and anxiety, and are more likely to have suicidal thoughts.</p>
+            <p style="line-height:1.7;">Because of this, part of maintaining mental health involves also maintaining a healthy body image. By treating your body with respect and practicing self-love for your body, you can improve your mental health.</p>
+            <br>
+            <h3>This quiz has been designed to help you assess whether you have a harshly critical view of your body; a loving, accepting image; or if you walk the line in between:</h3>
+    </div>
+
+    <hr style="height:1px;border:none;color:#333;background-color:#333;" width="50%">
 
     <div class="container" style="padding: 50px 200px">
-        <form action="{% url 'homepage' %}">
+        <form action="{% url 'survey' %}">
             <h5>1- When you look at mirror do you feel that you’re satisfied with your Facial features? </h5>
-            <input type="radio" id="q1-option-1" name="q1" value="HTML">
+            <input type="radio" id="q1-option-1" name="q1" value="- Yes, all of them">
             <label for="q1-option-1">- Yes, all of them</label><br>
-            <input type="radio" id="q1-option-2" name="q1" value="CSS">
+            <input type="radio" id="q1-option-2" name="q1" value="- Yes, most of them">
             <label for="q1-option-2">- Yes, most of them</label><br>
-            <input type="radio" id="q1-option-3" name="q1" value="JavaScript">
+            <input type="radio" id="q1-option-3" name="q1" value="- Not really">
             <label for="q1-option-3">- Not really</label>
             <br>
             <br>
             <h5>2- Do you remind yourself that you are worthy of love and kindness?</h5>
-            <input type="radio" id="q2-option-1" name="q2" value="30">
+            <input type="radio" id="q2-option-1" name="q2" value="- Yes, all the time">
             <label for="q2-option-1">- Yes, all the time</label><br>
-            <input type="radio" id="q2-option-2" name="q2" value="60">
+            <input type="radio" id="q2-option-2" name="q2" value="- Sometimes">
             <label for="q2-option-2">- Sometimes</label><br>
-            <input type="radio" id="q2-option-3" name="q2" value="100">
+            <input type="radio" id="q2-option-3" name="q2" value="- Not really">
             <label for="q2-option-3">- Not really</label>
             <br>
             <br>
             <h5>3- What is the source of the negative thoughts about your appearance?</h5>
-            <input type="radio" id="q3-option-1" name="q3" value="30">
+            <input type="radio" id="q3-option-1" name="q3" value="- Internally">
             <label for="q3-option-1">- Internally</label><br>
-            <input type="radio" id="q3-option-2" name="q3" value="60">
+            <input type="radio" id="q3-option-2" name="q3" value="- From others (Bullying)">
             <label for="q3-option-2">- From others (Bullying)</label><br>
-            <input type="radio" id="q3-option-3" name="q3" value="100">
+            <input type="radio" id="q3-option-3" name="q3" value="- Traumas">
             <label for="q3-option-3">- Traumas</label>
             <br>
             <br>
             <h5>4- Do you comparing your look to others?</h5>
-            <input type="radio" id="q4-option-1" name="q4" value="30">
+            <input type="radio" id="q4-option-1" name="q4" value="- I’m comfortable with myself">
             <label for="q4-option-1">- I’m comfortable with myself</label><br>
-            <input type="radio" id="q4-option-2" name="q4" value="60">
+            <input type="radio" id="q4-option-2" name="q4" value="- Usually">
             <label for="q4-option-2">- Usually</label><br>
-            <input type="radio" id="q4-option-3" name="q4" value="100">
+            <input type="radio" id="q4-option-3" name="q4" value="- All the time">
             <label for="q4-option-3">- All the time</label>
             <br>
             <br>
             <h5>5- Do you have stretch marks? do you feel anxious and uncomfortable because of them?</h5>
-            <input type="radio" id="q5-option-1" name="q5" value="30">
+            <input type="radio" id="q5-option-1" name="q5" value="- Yes i have, and i don't like how it looks">
             <label for="q5-option-1">- Yes i have, and i don't like how it looks</label><br>
-            <input type="radio" id="q5-option-2" name="q5" value="60">
+            <input type="radio" id="q5-option-2" name="q5" value="- yes, i have, and i am okay with them, they are normal">
             <label for="q5-option-2">- yes, i have, and i am okay with them, they are normal</label><br>
-            <input type="radio" id="q5-option-3" name="q5" value="100">
+            <input type="radio" id="q5-option-3" name="q5" value="- No i don't have">
             <label for="q5-option-3">- No i don't have</label>
+            <br>
+            <br>
+            <h5>6- Do you feel comfortable to go out without makeup?</h5>
+            <input type="radio" id="q6-option-1" name="q6" value="- I do that all the time">
+            <label for="q6-option-1">- I do that all the time</label><br>
+            <input type="radio" id="q6-option-2" name="q6" value="- Sometimes, only when i feel my skin is clear">
+            <label for="q6-option-2">- Sometimes, only when i feel my skin is clear</label><br>
+            <input type="radio" id="q6-option-3" name="q6" value="- No, no way">
+            <label for="q6-option-3">- No, no way</label>
+            <br>
+            <br>
+            <h5>7- Are you able to take a selfie without a filter?</h5>
+            <input type="radio" id="q7-option-1" name="q7" value="- Yes">
+            <label for="q7-option-1">- Yes</label><br>
+            <input type="radio" id="q7-option-2" name="q7" value="- I use filters that doesn’t change much in my actual look">
+            <label for="q7-option-2">- I use filters that doesn’t change much in my actual look</label><br>
+            <input type="radio" id="q7-option-3" name="q7" value="- No way">
+            <label for="q7-option-3">- No way</label>
+            <br>
+            <br>
+            <h5>8- When you look in a full-length mirror, your gaze is drawn to…</h5>
+            <input type="radio" id="q8-option-1" name="q8" value="- Parts of your body you are proud of">
+            <label for="q8-option-1">- Parts of your body you are proud of</label><br>
+            <input type="radio" id="q8-option-2" name="q8" value="- Your overall appearance">
+            <label for="q8-option-2">- Your overall appearance</label><br>
+            <input type="radio" id="q8-option-3" name="q8" value="- Parts of your body you dislike most">
+            <label for="q8-option-3">- Parts of your body you dislike most</label>
+            <br>
+            <br>
+            <h5>9- Growing up, your relationship with your face look was…</h5>
+            <input type="radio" id="q9-option-1" name="q9" value="- Pretty good most of the time">
+            <label for="q9-option-1">- Pretty good most of the time</label><br>
+            <input type="radio" id="q9-option-2" name="q9" value="- Something you made a conscious effort to work at">
+            <label for="q9-option-2">- Something you made a conscious effort to work at</label><br>
+            <input type="radio" id="q9-option-3" name="q9" value="- Up and down">
+            <label for="q9-option-3">- Up and down</label>
+            <br>
+            <br>
+            <h5>10- How do you feel about media images of ‘perfect’ bodies?</h5>
+            <input type="radio" id="q10-option-1" name="q10" value="- They're posed and Photoshopped; they don't even look like real people">
+            <label for="q10-option-1">- They're posed and Photoshopped; they don't even look like real people</label><br>
+            <input type="radio" id="q10-option-2" name="q10" value="- They inspire you to stay in shape">
+            <label for="q10-option-2">- They inspire you to stay in shape</label><br>
+            <input type="radio" id="q10-option-3" name="q10" value="- You're drawn to them, even though they can ruin your day">
+            <label for="q10-option-3">- You're drawn to them, even though they can ruin your day</label>
+            <br>
+            <br>
+            <h5>11- You wake up with a painful crick in your neck, so you…</h5>
+            <input type="radio" id="q11-option-1" name="q11" value="- Book a massage in your lunch hour">
+            <label for="q11-option-1">- Book a massage in your lunch hour</label><br>
+            <input type="radio" id="q11-option-2" name="q11" value="- Ignore it and get on with your day">
+            <label for="q11-option-2">- Ignore it and get on with your day</label><br>
+            <input type="radio" id="q11-option-3" name="q11" value="- Feel annoyed">
+            <label for="q11-option-3">- Feel annoyed</label>
 
             <!--SUBMIT BUTTON-->
             <br>
