@@ -9,13 +9,34 @@ def survey(request):
                        request.GET['q6'], request.GET['q7'], request.GET['q8'], request.GET['q9'], request.GET['q10'],
                        request.GET['q11']]
 
-        with open("file.txt", 'w') as datafile:
+        with open("file.txt", 'a') as datafile:
             for answer in all_answers:
-                datafile.writelines(f"{answer}\n")
+                datafile.write(f"\n{answer}\n")
 
-        return render(request, 'index.html', {"all_answers": all_answers})
+        return render(request, 'submit.html')
 
     except MultiValueDictKeyError:
         pass
 
     return render(request, 'survey.html')
+
+
+def submit(request):
+    try:
+        name = request.GET['name']
+        email = request.GET['email']
+        password = request.GET['password']
+
+        with open('file.txt', 'a') as datafile:
+            datafile.write(f"\nname:{name}\nemail:{email}\nphone:{password}\n---------------------")
+
+        return render(request, 'done.html')
+
+    except MultiValueDictKeyError:
+        pass
+
+    return render(request, 'submit.html')
+
+
+def done(request):
+    return render(request, 'done.html')

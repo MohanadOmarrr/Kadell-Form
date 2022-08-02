@@ -15,43 +15,13 @@
 
 </head>
 <body>
-<!--NAVBAR-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="{% url 'homepage' %}">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'survey' %}">Survey</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dropdown link
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </nav>
 
     <div  align="center" style="padding-top:10px;">
         <img src="{% static 'Banner.png' %}" width="45%"/>
     </div>
 
     <div class="container" style="padding: 50px 200px">
-            <h1 style="font-family:Bonky Serif; line-height:1.5;">How happy are you in your body?<br>Does it affects your mental health?</h1>
+            <h1 style="font-family:Bonky Serif; line-height:1.5;">How happy are you in your body?<br>Does it affect your mental health?</h1>
             <br>
             <p style="line-height:1.7;">The effect of poor body image on mental goes beyond occasional negative thoughts. A study at Bradley Hospital found that people with weight preoccupations or body dysmorphic disorder display higher levels of symptoms for depression and anxiety, and are more likely to have suicidal thoughts.</p>
             <p style="line-height:1.7;">Because of this, part of maintaining mental health involves also maintaining a healthy body image. By treating your body with respect and practicing self-love for your body, you can improve your mental health.</p>
@@ -90,7 +60,7 @@
             <label for="q3-option-3">- Traumas</label>
             <br>
             <br>
-            <h5>4- Do you comparing your look to others?</h5>
+            <h5>4- Do you compare your look to others?</h5>
             <input type="radio" id="q4-option-1" name="q4" value="- I’m comfortable with myself">
             <label for="q4-option-1">- I’m comfortable with myself</label><br>
             <input type="radio" id="q4-option-2" name="q4" value="- Usually">

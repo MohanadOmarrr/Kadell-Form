@@ -18,10 +18,10 @@ from django.urls import path
 
 from Kadell import settings
 from survey import views
-import main
 
 urlpatterns = [
-    path('', main.homepage, name='homepage'),
+    path('', views.survey, name="survey"),
+    path('submit/', views.submit, name="submit"),
+    path('submited', views.done, name="done"),
     path('admin/', admin.site.urls),
-    path('survey/', views.survey, name="survey"),
 ]
