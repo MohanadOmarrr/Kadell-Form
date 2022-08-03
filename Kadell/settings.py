@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-
+import cloudinary
 from pathlib import Path
 import os
 
@@ -31,6 +31,8 @@ ALLOWED_HOSTS = ['kadell-form.herokuapp.com']
 # Application definition
 
 INSTALLED_APPS = [
+    'cloudinary',
+    'cloudinary_storage',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -114,6 +116,15 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dhyz3axjw',
+    'API_KEY': '696542417221265',
+    'API_SECRET': 'S2E8wY_yB92NgdOjTDz9VoFsqDo',
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'Kadell/static/')
 ]
