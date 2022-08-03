@@ -32,7 +32,7 @@ ALLOWED_HOSTS = ['kadell-form.herokuapp.com']
 # Application definition
 
 INSTALLED_APPS = [
-    'survey',
+    'survey.apps.SurveyConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
