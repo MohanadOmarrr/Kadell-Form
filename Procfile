@@ -1,1 +1,1 @@
-gunicorn = gunicorn -w 3 survey:app
+gunicorn -w 3 survey:app
