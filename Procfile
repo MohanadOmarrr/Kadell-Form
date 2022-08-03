@@ -1,1 +1,1 @@
-web: gunicorn Kadell.Kadell.wsgi
+web: gunicorn Kadell.wsgi --log-file -
