@@ -1,1 +1,1 @@
-gunicorn -w 3 survey:app
+web: gunicorn gettingstarted.wsgi
