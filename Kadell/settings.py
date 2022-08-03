@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-28g!&y*tg&^er63al61m5j4(ky+7jajpd4%8z1y$rga-fr#62b
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://kadell-form.herokuapp.com/']
+ALLOWED_HOSTS = ['https://kadell-form.herokuapp.com']
 
 
 # Application definition
