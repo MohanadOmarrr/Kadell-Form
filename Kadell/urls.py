@@ -22,6 +22,6 @@ from survey import views
 urlpatterns = [
     path('', views.survey, name="survey"),
     path('submit/', views.submit, name="submit"),
-    path('submited', views.done, name="done"),
+    path('done/', views.done, name="done"),
     path('admin/', admin.site.urls),
 ]
