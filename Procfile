@@ -1,1 +1,1 @@
-web: gunicorn Kadell.wsgi
+web gunicorn Kadell.wsgi
