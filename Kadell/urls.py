@@ -19,7 +19,7 @@ from django.urls import path
 from survey import views
 
 urlpatterns = [
-    path('/', views.survey, name="survey"),
+    path('', views.survey, name="survey"),
     path('submit/', views.submit, name="submit"),
     path('done/', views.done, name="done"),
     path('admin/', admin.site.urls),
