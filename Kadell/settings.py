@@ -51,7 +51,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'Kadell.urls'
+# ROOT_URLCONF = 'Kadell.urls'
+ROOT_URLCONF = 'Kadell.Kadell.urls'
 
 TEMPLATES = [
     {
