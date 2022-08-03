@@ -1,1 +1,1 @@
-web: gunicorn survey:app
+gunicorn kadell.wsgi
