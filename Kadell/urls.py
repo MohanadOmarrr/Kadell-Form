@@ -24,4 +24,4 @@ urlpatterns = [
     path('submit/', views.submit, name="submit"),
     path('done/', views.done, name="done"),
     path('admin/', admin.site.urls),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
