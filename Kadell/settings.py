@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-28g!&y*tg&^er63al61m5j4(ky+7jajpd4%8z1y$rga-fr#62b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['kadell-form.herokuapp.com']
 
