@@ -9,6 +9,11 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
+
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
 from pathlib import Path
 import os
 
@@ -37,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'survey'
 ]
 
 MIDDLEWARE = [
@@ -128,3 +134,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+cloudinary.config(
+  cloud_name="dhyz3axjw",
+  api_key="696542417221265",
+  api_secret="S2E8wY_yB92NgdOjTDz9VoFsqDo",
+  secure=True
+)
