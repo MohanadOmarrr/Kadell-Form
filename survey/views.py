@@ -1,4 +1,3 @@
-import cloudinary.uploader
 from django.shortcuts import render
 from django.utils.datastructures import MultiValueDictKeyError
 
@@ -58,16 +57,13 @@ def send_email(msg, name, email, phone):
 def survey(request):
     global all_answers
 
-    from .models import Photo
-    banner = Photo.image
-
     # TRY TO GET ALL_ANSWERS
     try:
         all_answers = [request.GET['q1'], request.GET['q2'], request.GET['q3'], request.GET['q4'], request.GET['q5'],
                        request.GET['q6'], request.GET['q7'], request.GET['q8'], request.GET['q9'], request.GET['q10'],
                        request.GET['q11']]
 
-        return render(request, 'submit.html', {"img": banner})
+        return render(request, 'submit.html')
 
     except MultiValueDictKeyError:
         pass
