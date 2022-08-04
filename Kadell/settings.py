@@ -10,10 +10,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
-import cloudinary
-import cloudinary.uploader
-import cloudinary.api
-
 from pathlib import Path
 import os
 
@@ -30,7 +26,7 @@ SECRET_KEY = 'django-insecure-28g!&y*tg&^er63al61m5j4(ky+7jajpd4%8z1y$rga-fr#62b
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['kadell-form.herokuapp.com']
+ALLOWED_HOSTS = ['kadell-form.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -121,7 +117,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'Kadell/static/')
+    os.path.join(BASE_DIR, '/work/Kadell-sa/Kadell/static')
 ]
 
 STATIC_URL = '/static/'
@@ -134,10 +130,3 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-cloudinary.config(
-  cloud_name="dhyz3axjw",
-  api_key="696542417221265",
-  api_secret="S2E8wY_yB92NgdOjTDz9VoFsqDo",
-  secure=True
-)
