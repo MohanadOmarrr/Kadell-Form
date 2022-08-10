@@ -61,7 +61,7 @@ def survey(request):
     try:
         all_answers = [request.GET['q1'], request.GET['q2'], request.GET['q3'], request.GET['q4'], request.GET['q5'],
                        request.GET['q6'], request.GET['q7'], request.GET['q8'], request.GET['q9'], request.GET['q10'],
-                       request.GET['q11']]
+                       request.GET['q11'], request.GET['q12'], request.GET['q13']]
 
         return render(request, 'submit.html')
 
