@@ -6,6 +6,7 @@ from django.utils.datastructures import MultiValueDictKeyError
 all_answers = []
 rana_acc = 'ranaz.omarz@gmail.com'
 rawan_acc = 'rawaneldalie@gmail.com'
+mohanad_acc = 'mohanadomark@gmail.com'
 
 
 # =============================================================================
@@ -23,7 +24,7 @@ def send_email(msg, name, email, phone):
 
     # SET THE INFO ABOUT THE SAID EMAIL
     sent_from = gmail_user
-    sent_to = [rana_acc, rawan_acc]
+    sent_to = [rana_acc, rawan_acc, mohanad_acc]
     sent_subject = "New Form"
     sent_body = f"{str(msg).encode('UTF-8')}\n\n" \
                 f"Name: {name}\n" \
