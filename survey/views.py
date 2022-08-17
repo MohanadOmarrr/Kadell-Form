@@ -26,7 +26,7 @@ def send_email(msg, name, email, phone):
     sent_from = gmail_user
     sent_to = [rana_acc, rawan_acc, mohanad_acc]
     sent_subject = "New Form"
-    sent_body = f"{str(msg).encode('UTF-8')}\n\n" \
+    sent_body = f"\n{str(msg).encode('UTF-8')}\n\n" \
                 f"Name: {name}\n" \
                 f"Email: {email}\n" \
                 f"Phone Number: {phone}"
